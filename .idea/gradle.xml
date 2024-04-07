@@ -3,10 +3,11 @@
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/worttrainer" />
+        <option name="gradleJvm" value="jbrsdk_jcef-17" />
         <option name="modules">
           <set>
-            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/worttrainer" />
           </set>
         </option>
       </GradleProjectSettings>
