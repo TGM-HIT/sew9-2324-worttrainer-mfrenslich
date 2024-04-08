@@ -16,11 +16,11 @@ class PersistJSONTest {
     @BeforeEach
     void setup() {
         this.wortliste = new Wortliste();
-        this.wortliste.addWord("Turtle", "https://i.pinimg.com/originals/f1/f4/13/f1f413d6d07912be6080c08b186630ac.jpg");
-        this.wortliste.addWord("Dog", "https://b1157417.smushcdn.com/1157417/wp-content/uploads/2023/09/happy-dog-with-big-tongue-out.jpg?lossy=1&strip=1&webp=0");
+        this.wortliste.addWord("Maus", "https://www.peta.de/wp-content/uploads/2009/03/Maus-house-mouse-gf306cec1c_1280-c-pixabay.jpg");
+        this.wortliste.addWord("Igel", "https://image.geo.de/30154986/t/4L/v3/w1440/r0/-/igel-geolino-shutterstock-jpg--88472-.jpg");
         this.worttrainer = new Worttrainer(this.wortliste);
         this.worttrainer.chooseIndex(0);
-        this.worttrainer.check("Turtle");
+        this.worttrainer.check("Maus");
         this.persist = new PersistJSON(worttrainer);
         this.persist.save();
         this.persist.load();
@@ -30,12 +30,12 @@ class PersistJSONTest {
     @Test
     @DisplayName("01 aktuelles Wort wiederhergestellt")
     void rightWord() {
-        assertEquals("Turtle", this.worttrainer01.getWorteintrag().getWord());
+        assertEquals("Maus", this.worttrainer01.getWorteintrag().getWord());
     }
     @Test
     @DisplayName("02 aktuelle URL wiederhergestellt")
     void rightURL() {
-        assertEquals("https://i.pinimg.com/originals/f1/f4/13/f1f413d6d07912be6080c08b186630ac.jpg", worttrainer01.getWorteintrag().getUrl());
+        assertEquals("https://www.peta.de/wp-content/uploads/2009/03/Maus-house-mouse-gf306cec1c_1280-c-pixabay.jpg", worttrainer01.getWorteintrag().getUrl());
     }
     @Test
     @DisplayName("03 games played wiederhergestellt")
@@ -50,6 +50,6 @@ class PersistJSONTest {
     @Test
     @DisplayName("05 liste wiederhergestellt")
     void getList() {
-        assertEquals("Turtle, https://i.pinimg.com/originals/f1/f4/13/f1f413d6d07912be6080c08b186630ac.jpg\nDog, https://b1157417.smushcdn.com/1157417/wp-content/uploads/2023/09/happy-dog-with-big-tongue-out.jpg?lossy=1&strip=1&webp=0", worttrainer01.getList().toString());
+        assertEquals("Maus, https://www.peta.de/wp-content/uploads/2009/03/Maus-house-mouse-gf306cec1c_1280-c-pixabay.jpg\nIgel, https://image.geo.de/30154986/t/4L/v3/w1440/r0/-/igel-geolino-shutterstock-jpg--88472-.jpg", worttrainer01.getList().toString());
     }
 }

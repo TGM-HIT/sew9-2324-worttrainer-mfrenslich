@@ -17,9 +17,7 @@ import javax.swing.JOptionPane;
  * @author Maximilian Frenslich
  * @version 07.04.2024
  */
-/**
- * Die Controller-Klasse implementiert das ActionListener-Interface, um auf Benutzeraktionen zu reagieren.
- */
+
 public class Controller implements ActionListener {
     private Panel panel;
     private Frame frame;
@@ -30,7 +28,6 @@ public class Controller implements ActionListener {
      * Konstruktor: Initialisiert den Controller und alle erforderlichen Komponenten.
      */
     public Controller() {
-        // Initialisierung des Worttrainers und des Persistenzmanagers
         trainer = new Worttrainer(new Wortliste());
         persist = new PersistJSON(trainer);
         persist.load(); // Laden der persistierten Daten

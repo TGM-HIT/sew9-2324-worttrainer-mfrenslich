@@ -33,18 +33,24 @@ public class PersistJSON extends Persist {
      */
     @Override
     public void save() {
+        // Erstellt ein JSONObject aus dem Worttrainer-Objekt
         JSONObject jsonObject = new JSONObject(trainer);
         FileWriter fileWriter = null;
         try {
+            // Öffnet eine FileWriter, um die JSON-Daten in eine Datei zu schreiben
             fileWriter = new FileWriter("persist.json");
+            // Schreibt die JSON-Daten in die Datei
             fileWriter.write(jsonObject.toString());
         } catch (IOException e) {
+            // Behandelt Ausnahmen, die beim Schreiben auftreten können
             e.printStackTrace();
         } finally {
+            // Schließt den FileWriter sicher, wenn er nicht mehr benötigt wird
             if (fileWriter != null) {
                 try {
                     fileWriter.close();
                 } catch (IOException e) {
+                    // Behandelt Ausnahmen, die beim Schließen auftreten können
                     JOptionPane.showMessageDialog(null, e.getMessage());
                 }
             }
@@ -56,11 +62,16 @@ public class PersistJSON extends Persist {
      */
     public void load() {
         try {
+            // Öffnet einen Reader, um die JSON-Daten aus der Datei zu lesen
             Reader input = new FileReader("persist.json");
+            // Erstellt eine neue Instanz von Gson
             Gson gson = new Gson();
+            // Definiert den Typ des Objekts, das aus der JSON-Datenstruktur deserialisiert werden soll
             Type type = new TypeToken<Worttrainer>(){}.getType();
+            // Deserialisiert/Wandelt die JSON-Daten in ein Worttrainer-Objekt um
             trainer = gson.fromJson(input, type);
         } catch (IOException e) {
+            // Behandelt Exceptions, die beim Lesen der Datei auftreten können
             JOptionPane.showMessageDialog(null, e.getMessage());
         }
     }

@@ -16,7 +16,7 @@ public class Frame extends JFrame {
      * @param panel Das Layout.
      */
     public Frame(JPanel panel) {
-        super("Worttrainer");
+        super("Worttrainer"); //  Worttrainer wird als Titel festgelegt
         this.add(panel);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setBounds(0, 0, 600, 450);
