@@ -3,7 +3,7 @@ package at.ac.tgm.mfrenslich.worttrainer.Model;
 import java.util.Random;
 
 /**
- * Klasse Rechtschreibtrainer
+ * Klasse Worttrainer
  *
  * @author Maximilian Frenslich
  * @version 07.04.2024
@@ -14,7 +14,7 @@ public class Worttrainer {
     private int gamesPlayed, gamesWon;
 
     /**
-     * Konstruktor der Klasse Rechtschreibtrainer.
+     * Konstruktor der Klasse Worttrainer.
      *
      * @param list Die Liste welche übergeben wird.
      * @throws IllegalArgumentException Exception die bei ungültigen Werten ausgegeben wird.
